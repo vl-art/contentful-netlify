@@ -26,25 +26,17 @@ module.exports = {
                 path: `${__dirname}/src/`
               }
             },
-            {
-              resolve: 'gatsby-transformer-remark', 
-              options: {
-                excerpt_separator: `<!-- end -->`
-              }
-            },
             'gatsby-transformer-sharp',
             'gatsby-plugin-sharp',
             'gatsby-plugin-resolve-src',
-            // {
-            //   resolve: `gatsby-plugin-netlify-cms`,
-            //   options: {
-            //     // One convention is to place your Netlify CMS customization code in a
-            //     // `src/cms` directory.
-            //     modulePath: `${__dirname}/src/cms/cms.js`,
-            //   }
-            // }
-            'gatsby-plugin-netlify-cms'
-            
+            {
+              resolve: `gatsby-source-contentful`,
+              options: {
+                spaceId: "a2hslmfsg3ch",
+                accessToken: "77fc5cec9204f214b70fd51c0db1ce47daddb48c9b0bdacfa910d0ccdd7fa616"
+              }
+            },
+            'gatsby-transformer-remark'            
           ]
         }
         // pathPrefix:"/gatsby",
